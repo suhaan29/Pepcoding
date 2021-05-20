@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class BaseADDBassRightWay {
 	
-	public static int bassAddition(int b, int n, int m)
+	public static int baseAddition(int b, int n, int m)
 	
 	{
 		int sum = 0;
@@ -40,7 +40,7 @@ public class BaseADDBassRightWay {
 		numberOne = s.nextInt();
 		numberTwo = s.nextInt();
 		
-		System.out.println(bassAddition(base, numberOne, numberTwo));
+		System.out.println(baseAddition(base, numberOne, numberTwo));
 		
 		s.close();
 	}
