@@ -14,6 +14,7 @@ public class RingRotate {
 		
 	}
 	
+	
 	public static void main(String[] args) {
 		
 		Scanner s = new Scanner(System.in);
@@ -42,6 +43,7 @@ public class RingRotate {
 	
 	int n = 2*(arr[0].length - 2*(sh - 1 )) + 2*(arr.length - 2*(sh - 1) - 2);
 	System.out.println(n);
+	System.out.println();
 	int[] newA = new int[n];
 	int i = 0;
 	while(i < n) {
@@ -80,6 +82,8 @@ public class RingRotate {
 		minR++;
 	}
 	
+	System.out.println("\n" + i + "\n");
+	
 	for(int a : newA)
 	{
 		System.out.println(a);
@@ -93,24 +97,35 @@ public class RingRotate {
 		m= r;
 	}
 	
-	swap(0, newA.length - m, newA);
-	swap(newA.length - m, newA.length, newA);
-	swap(0, newA.length, newA);
+	swap(0, newA.length - m - 1, newA);
+	swap(newA.length - m, newA.length - 1, newA);
+	swap(0, newA.length - 1, newA);
+	System.out.println();
+	for(int a : newA)
+	{
+		System.out.println(a);
+	}
+	 minR = 0 + sh - 1;
+	 minC = 0 + sh - 1;
 	
-	while(i < n) {
+	 maxR = arr.length  - 1 - (sh - 1) ;
+	 maxC = arr[0].length - 1 - (sh - 1);
+    int last = 0;
+	
+	while(last < n) {
 		//down
 		
-		for(int k = minR, j = minC; k <= maxR && i < n; k++) {
-			 arr[k][j] = newA[i];
-			i++;
+		for(int k = minR, j = minC; k <= maxR && last < n; k++) {
+			 arr[k][j] = newA[last];
+			last++;
 		}
 		minC++;
 		
 		
 		//right
-		for(int k = minC, j = maxR; k <= maxC && i < n; k++) {
-			arr[j][k] = newA[i];
-			i++;
+		for(int k = minC, j = maxR; k <= maxC && last < n; k++) {
+			arr[j][k] = newA[last];
+			last++;
 		}
 		maxR--;
 
@@ -118,17 +133,17 @@ public class RingRotate {
 		
 		//up
 		
-		for(int k = maxR, j = maxC; k >= minR && i < n; k--) {
-			 arr[k][j] = newA[i];
-			i++;
+		for(int k = maxR, j = maxC; k >= minR && last < n; k--) {
+			 arr[k][j] = newA[last];
+			last++;
 		}
 		maxC--;
 		
 		//left
 		
-		for(int k = maxC, j = minR ; k >= minC && i < n; k--) {
-		    arr[j][k] = newA[i];
-			i++;
+		for(int k = maxC, j = minR ; k >= minC && last < n; k--) {
+		    arr[j][k] = newA[last];
+			last++;
 		}
 		minR++;
 	}
