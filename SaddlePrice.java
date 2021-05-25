@@ -20,19 +20,30 @@ public class SaddlePrice {
 		for(int i = 0; i < arr.length; i++)
 		{ 
 			int min = arr[i][0];
+			int x = 0;
 			for(int j = 0; j < arr[0].length; j++)
 			{
+				
 				if(arr[i][j] < min)
 				{
 					min = arr[i][j];
+					x = j;
 				}
+				
+				
 			
 			}
 			
-			if(min > max)
-			{
-				max = min;
+			for(int k = 0; k < arr.length; k++) {
+				if(min < arr[k][x]) {
+					break;
+				}
+				
+				else {
+					System.out.println("this is it");
+				}
 			}
+			
 		}
 		
 		System.out.println(max);
