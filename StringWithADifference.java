@@ -16,7 +16,7 @@ public class StringWithADifference {
 		
 		for(int i = 0; i < n-1; i++)
 		{
-			int a = (int)s.charAt(i) - (int)s.charAt(i+1);
+			int a = (int)s.charAt(i+1) - (int)s.charAt(i);
 			d.append(s.charAt(i));
 			d.append(a);
 			
