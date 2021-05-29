@@ -6,6 +6,7 @@ import java.util.*;
 public class PrintPermutationsRightWay {
 
 	public static void solution(String str){
+		
 		int n = factorial(str.length());
 		for(int i = 0 ; i  < n; i++){
 			StringBuilder s = new StringBuilder(str);
