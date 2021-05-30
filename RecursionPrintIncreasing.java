@@ -8,7 +8,7 @@ public class RecursionPrintIncreasing {
 			return;
 		}
 		printIncreasing(n-1);
-		System.out.println(n);
+		System.out.println(n); //this is an example of tail recursion
 	}
 
 	public static void main(String[] args) {
